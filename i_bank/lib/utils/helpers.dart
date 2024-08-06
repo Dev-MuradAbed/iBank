@@ -40,3 +40,13 @@ void startLoading() {
     ),
   );
 }
+
+/// print successes response in debug console
+void printSuccessesResponse({dynamic response, dynamic time}) {
+  if (showLog) {
+    developer.log('📗\x1B[32m ******** Successes Request **********📗');
+    developer.log('\x1B[35m Time : \x1B[37m $time  \x1B[33m milliseconds');
+    developer.log('\x1B[35m Response :\x1B[37m $response');
+    developer.log('\x1B[32m  *************** END **************');
+  }
+}
