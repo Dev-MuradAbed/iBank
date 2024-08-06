@@ -38,6 +38,7 @@ dependencies:
   common_ui_toolkit: ^0.3.13
   # fl_chart: ^0.68.0
   get: ^4.6.6
+  flutter_smart_dialog: 4.2.5
 
 dev_dependencies:
   flutter_test:
