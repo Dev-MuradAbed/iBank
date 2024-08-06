@@ -1,6 +1,9 @@
 import 'dart:developer';
 import 'dart:developer' as developer;
 
+import 'package:common_ui_toolkit/common_ui_toolkit.dart';
+import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
+
 import 'index.dart';
 
 void consoleLog(dynamic value, {dynamic key = 'value'}) {
@@ -23,4 +26,17 @@ void showRequestDetails({
     developer.log('\x1B[35m Body: \x1B[37m $body');
     developer.log('\x1B[36m  *************** END **************');
   }
+}
+
+/// start loading spinner
+void startLoading() {
+  SmartDialog.showLoading(
+    msg: '',
+    maskColor: Colors.black54,
+    builder: (BuildContext context) => Image.asset(
+      '', //insert gif image
+      width: DEVICE_WIDTH * 0.5,
+      height: DEVICE_WIDTH * 0.5,
+    ),
+  );
 }
