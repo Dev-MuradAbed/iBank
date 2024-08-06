@@ -50,3 +50,8 @@ void printSuccessesResponse({dynamic response, dynamic time}) {
     developer.log('\x1B[32m  *************** END **************');
   }
 }
+
+/// stop loading spinner
+Future<void> dismissLoading() async {
+  await SmartDialog.dismiss();
+}
