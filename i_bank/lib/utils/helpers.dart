@@ -55,3 +55,45 @@ void printSuccessesResponse({dynamic response, dynamic time}) {
 Future<void> dismissLoading() async {
   await SmartDialog.dismiss();
 }
+
+/// show alert
+void showMessage({
+  required String description,
+  String title = 'alert',
+  String? type,
+  int? textColor,
+  double barBlur = 2,
+  bool withBackground = true,
+}) {
+  Get.snackbar(
+    title.tr,
+    description,
+    colorText: Color(
+      textColor ?? 0xFF000000,
+    ),
+    titleText: Text(
+      title.tr,
+    ),
+    backgroundColor: withBackground ? Colors.white : null,
+    barBlur: barBlur,
+    overlayBlur: .5,
+    boxShadows: <BoxShadow>[
+      BoxShadow(
+        color: Colors.grey.withOpacity(.15),
+        blurRadius: 10,
+        spreadRadius: 4,
+        offset: const Offset(0, 2),
+      )
+    ],
+  );
+}
+
+/// print request error in debug console
+void printRequestError({dynamic error, dynamic time}) {
+  if (showLog) {
+    developer.log('🛑 \x1B[31m ******** Request Error ********* 🛑');
+    developer.log('\x1B[35m Time : \x1B[37m $time  \x1B[33m milliseconds');
+    developer.log('\x1B[35m Response :\x1B[37m $error');
+    developer.log(' \x1B[31m ************* END ************** ');
+  }
+}
