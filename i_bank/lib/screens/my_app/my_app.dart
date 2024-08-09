@@ -1,7 +1,7 @@
 import 'package:common_ui_toolkit/common_ui_toolkit.dart';
 import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
 
-import '../../controllers/index.dart';
+import '../../language/translation.dart';
 import '../../utils/index.dart';
 
 class MyApp extends StatelessWidget {
@@ -9,8 +9,8 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final AppLanguageController appLanguageController =
-        Get.find<AppLanguageController>();
+    // final AppLanguageController appLanguageController =
+    //     Get.find<AppLanguageController>();
     return GetMaterialApp(
       builder: (BuildContext context, Widget? child) {
         return ScrollConfiguration(
@@ -20,11 +20,27 @@ class MyApp extends StatelessWidget {
           ),
         );
       },
-      theme: ThemeData(
-        fontFamily: appLanguageController.appLocale == keyArabicValue
-            ? 'BahijJanna'
-            : 'Futura',
-      ),
+      // theme: ThemeData(
+      //   fontFamily: appLanguageController.appLocale == keyArabicValue
+      //       ? 'BahijJanna'
+      //       : 'Futura',
+      // ),
+      translations: Translation(),
+
+      // we use the fallbackLocale to handel any error in language files and use the en as default language
+      fallbackLocale: const Locale('en'),
+      debugShowCheckedModeBanner: false,
+      initialRoute: routeSplash,
+      getPages: <GetPage<dynamic>>[
+        GetPage<dynamic>(
+          name: routeSplash,
+          page: () => Scaffold(
+            appBar: AppBar(
+              title: const Text('js'),
+            ),
+          ),
+        ),
+      ],
     );
   }
 }
