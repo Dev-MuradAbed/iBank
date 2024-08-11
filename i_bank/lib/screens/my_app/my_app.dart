@@ -26,7 +26,10 @@ class MyApp extends StatelessWidget {
       //       : 'Futura',
       // ),
       translations: Translation(),
-
+      theme: ThemeData(
+        primaryColor: const Color(colorPrimary),
+        scaffoldBackgroundColor: const Color(colorwhite),
+      ),
       // we use the fallbackLocale to handel any error in language files and use the en as default language
       fallbackLocale: const Locale('en'),
       debugShowCheckedModeBanner: false,
@@ -38,6 +41,7 @@ class MyApp extends StatelessWidget {
             appBar: AppBar(
               title: const Text('js'),
             ),
+            body: const CommonCardComponents(),
           ),
         ),
       ],

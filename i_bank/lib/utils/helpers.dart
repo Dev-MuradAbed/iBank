@@ -1,10 +1,14 @@
-import 'dart:developer';
 import 'dart:developer' as developer;
+import 'dart:developer';
 
 import 'package:common_ui_toolkit/common_ui_toolkit.dart';
 import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
 
+import '../controllers/app_language.dart';
 import 'index.dart';
+
+final AppLanguageController appLanguageController =
+    Get.find<AppLanguageController>();
 
 void consoleLog(dynamic value, {dynamic key = 'value'}) {
   log('📔:\x1B[32m ******** Log $key **********:📔');
@@ -96,4 +100,11 @@ void printRequestError({dynamic error, dynamic time}) {
     developer.log('\x1B[35m Response :\x1B[37m $error');
     developer.log(' \x1B[31m ************* END ************** ');
   }
+}
+
+/// return the result as current language
+dynamic languageCondition(dynamic arabicValue, dynamic englishValue) {
+  return appLanguageController.appLocale == keyArabicValue
+      ? arabicValue
+      : englishValue;
 }
