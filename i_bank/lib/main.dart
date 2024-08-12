@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+import 'controllers/index.dart';
 import 'utils/index.dart';
 
 void main() {
@@ -18,6 +19,6 @@ void main() {
     DeviceOrientation.portraitUp,
     DeviceOrientation.portraitDown
   ]);
-
+  Get.put(AppLanguageController());
   runApp(const MyApp());
 }
