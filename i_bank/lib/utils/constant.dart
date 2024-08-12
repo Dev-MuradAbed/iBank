@@ -41,6 +41,7 @@ const int colorGray1 = 0xFF898989;
 const int colorGray2 = 0xFF989898;
 const int colorGray3 = 0xFFCACACA;
 const int colorGray4 = 0xFFE0E0E0;
+const int colorGray5 = 0xFF979797;
 const int colorwhite = 0xFFFFFFFF;
 const int colorRed = 0xFFFF4267;
 const int colorBlue = 0xFF0890FE;
